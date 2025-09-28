@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Birthday Wishlist</title>
+    <title>My Birthday Wishlist!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -14,7 +14,6 @@
             background-color: #0a0a1a;
             overflow-x: hidden;
         }
-        
         .parallax-bg {
             position: fixed;
             top: 0;
@@ -26,10 +25,26 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            filter: brightness(0.3);
+            
+}
+        
+        .light-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: pulse 8s infinite alternate;
         }
         
-        .container {
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+.container {
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
@@ -93,64 +108,190 @@
             border-radius: 5px;
             transition: background 0.3s ease;
         }
-        
         .gift-link:hover {
             background: #ff6b8b;
         }
-    </style>
+        
+        .gift-status {
+            margin-top: 15px;
+        }
+        .status-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .available {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .taken {
+            background-color: #9c27b0;
+            color: white;
+        }
+.reserve-btn {
+            padding: 5px 10px;
+            background-color: #ff85a2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .reserve-btn:hover {
+            background-color: #ff6b8b;
+        }
+        
+        .reset-btn {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #ff85a2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .reset-btn:hover {
+            background-color: #ff6b8b;
+        }
+</style>
 </head>
 <body>
     <div class="parallax-bg"></div>
-    
-    <div class="container">
+            <div class="light-effect" style="background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);"></div>
+<div class="container">
         <header>
             <h1>My Birthday Wishlist</h1>
             <p class="intro">
-                Hi everyone! As my birthday approaches, I wanted to share some gift ideas that would make me super happy. 
-                These are just suggestions - your presence is the best present of all! ❤️
+                Привет всем! Совсем скоро, 7 октября у меня состоится день рождения, поэтому спешу делиться некоторыми идеями подарков, которые сделают меня супер счастливой.
+                Я выбрала для себя несколько секций, которые касаются моих интересов и желания новых ощущений и опыта. Ваше присутствие - лучший подарок из всех возможных! ❤️
             </p>
+            <button id="resetAllBtn" class="reset-btn">Сбросить все отметки</button>
         </header>
-        
-        <div class="gift-list">
+<div class="gift-list">
             <div class="gift-card">
-                <h2 class="gift-title">Cosy Blanket</h2>
+                <h2 class="gift-title">Гантели-утяжелители</h2>
                 <p class="gift-description">
-                    A soft, warm blanket for those chilly evenings when I'm reading or watching movies.
+                    A beautiful fragrance to make every day special. I love floral and fruity scents.
                 </p>
-                <a href="https://example.com/blanket" class="gift-link" target="_blank">Example Link</a>
-            </div>
-            
+                <a href="https://www.ozon.ru/product/utyazheliteli-dlya-nog-dlya-ruk-yourfit-2067019998/?from_sku=2369270177&from_url=https%3A%2F%2Fwww.ozon.ru%2Fsw%2Fbx%2F3.0.9.js&oos_search=false&utm_source=followish" class="gift-link" target="_blank">Ссылка для примера</a>
+                <div class="gift-status">
+                <button class="status-btn available" data-gift="perfume">Доступно</button>
+                <button class="reserve-btn" data-gift="perfume">Занять</button>
+</div>
+</div>
             <div class="gift-card">
-                <h2 class="gift-title">Book</h2>
+                <h2 class="gift-title">Рэй Далио, Принципы</h2>
                 <p class="gift-description">
-                    I love fantasy novels! Any book from my favorite authors would be amazing.
+                    A relaxing spa treatment or massage to help me unwind and pamper myself.
                 </p>
-                <a href="https://example.com/book" class="gift-link" target="_blank">Example Link</a>
-            </div>
-            
+                <a href="https://www.spafinder.com/" class="gift-link" target="_blank">Ссылка для примера</a>
+                <div class="gift-status">
+                <button class="status-btn available" data-gift="spa-day">Доступно</button>
+                <button class="reserve-btn" data-gift="spa-day">Занять</button>
+</div>
+</div>
             <div class="gift-card">
-                <h2 class="gift-title">Scented Candles</h2>
+                <h2 class="gift-title">Световой будильник</h2>
                 <p class="gift-description">
-                    I enjoy vanilla or lavender scented candles to create a relaxing atmosphere.
+                    Delicate pieces like necklaces or earrings that I can wear every day.
                 </p>
-                <a href="https://example.com/candles" class="gift-link" target="_blank">Example Link</a>
-            </div>
-            
+                <a href="https://market.yandex.ru/card/umnyy-svetovoy-budilnik-s-fm-radio-i-usb-s-imitatsiyey-rassveta-i-zakata-20-urovney-svetovoy-intensivnosti-7-tsvetov-podsvetki/4306875929?do-waremd5=Ellk0GCCPMLYiE-kfgWnkg&sponsored=1&nid=69272401&clid=5931682&publicId=4meaj8kp182fgj6rea8qk9a950&pp=900&mclid=1003&distr_type=7&ogV=7" class="gift-link" target="_blank">Ссылка для примера</a>
+                <div class="gift-status">
+                <button class="status-btn available" data-gift="jewelry">Доступно</button>
+                <button class="reserve-btn" data-gift="jewelry">Занять</button>
+</div>
+</div>
             <div class="gift-card">
-                <h2 class="gift-title">Gift Card</h2>
+                <h2 class="gift-title">Браслет whoop peak</h2>
                 <p class="gift-description">
-                    A gift card to my favorite bookstore or coffee shop would be perfect!
+                    Для помощи в оценке стресса. Важно, чтобы был с этой функцией.
                 </p>
-                <a href="https://example.com/giftcard" class="gift-link" target="_blank">Example Link</a>
-            </div>
+                <a href="https://market.yandex.ru/card/fitnes-braslet-whoop-50-peak--chernyy--s-podpiskoy-na-12-mesyatsev/4476675675?hid=70246919&nid=70249374&ogV=7&publicId=4meaj8kp182fgj6rea8qk9a950&clid=5931682&pp=900&mclid=1003&distr_type=7" class="gift-link" target="_blank">Ссылка для примера</a>
+                <div class="gift-status">
+                <button class="status-btn available" data-gift="fitness-tracker">Доступно</button>
+                <button class="reserve-btn" data-gift="fitness-tracker">Занять</button>
+</div>
+</div>
+            <div class="gift-card">
+                <h2 class="gift-title">Dining Experience</h2>
+                <p class="gift-description">
+                    A gift certificate to a nice restaurant for a memorable dining experience.
+                </p>
+                <a href="https://www.opentable.com/" class="gift-link" target="_blank">Example Link</a>
+                <div class="gift-status">
+                <button class="status-btn available" data-gift="dining">Доступно</button>
+                <button class="reserve-btn" data-gift="dining">Занять</button>
+</div>
+</div>
+            <div class="gift-card">
+                <h2 class="gift-title">Skincare Set</h2>
+                <p class="gift-description">
+                    Luxury skincare products to help me maintain a healthy, glowing complexion.
+                </p>
+                <a href="https://www.sephora.com/shop/skincare" class="gift-link" target="_blank">Example Link</a>
+                <div class="gift-status">
+                <button class="status-btn available" data-gift="skincare">Доступно</button>
+                <button class="reserve-btn" data-gift="skincare">Занять</button>
+</div>
+</div>
         </div>
-    </div>
-    
+</div>
     <script>
         window.addEventListener('scroll', function() {
             const parallaxBg = document.querySelector('.parallax-bg');
             let scrollPosition = window.pageYOffset;
             parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        });
+        document.querySelectorAll('.reserve-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const giftId = this.getAttribute('data-gift');
+                const statusBtn = document.querySelector(`.status-btn[data-gift="${giftId}"]`);
+                
+                if (statusBtn.classList.contains('available')) {
+                    statusBtn.textContent = 'Занято';
+                    statusBtn.classList.remove('available');
+                    statusBtn.classList.add('taken');
+                    localStorage.setItem(giftId, 'taken');
+                    this.style.display = 'none';
+                }
+            });
+        });
+
+        // Initialize status from localStorage
+        document.querySelectorAll('.status-btn').forEach(btn => {
+            const giftId = btn.getAttribute('data-gift');
+            if (localStorage.getItem(giftId) === 'taken') {
+                btn.textContent = 'Занято';
+                btn.classList.remove('available');
+                btn.classList.add('taken');
+                const reserveBtn = document.querySelector(`.reserve-btn[data-gift="${giftId}"]`);
+                if (reserveBtn) reserveBtn.style.display = 'none';
+            }
+        });
+
+        // Reset all button functionality
+        document.getElementById('resetAllBtn').addEventListener('click', function() {
+            if (confirm('Вы уверены, что хотите сбросить все отметки о занятых подарках?')) {
+                document.querySelectorAll('.status-btn').forEach(btn => {
+                    const giftId = btn.getAttribute('data-gift');
+                    localStorage.removeItem(giftId);
+                    btn.textContent = 'Доступно';
+                    btn.classList.remove('taken');
+                    btn.classList.add('available');
+                });
+                
+                document.querySelectorAll('.reserve-btn').forEach(btn => {
+                    btn.style.display = 'inline-block';
+                });
+            }
         });
     </script>
 </body>
