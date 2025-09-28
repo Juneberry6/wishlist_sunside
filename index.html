@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Birthday Wishlist!</title>
+    <title>My Birthday Wishlist Да!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -135,7 +135,7 @@
         }
 .reserve-btn {
             padding: 5px 10px;
-            background-color: #ff85a2;
+            background-color: #e6728f;
             color: white;
             border: none;
             border-radius: 4px;
@@ -143,11 +143,34 @@
             transition: all 0.3s ease;
         }
         .reserve-btn:hover {
-            background-color: #ff6b8b;
+            background-color: #d45c7a;
         }
-        
-        .reset-btn {
-            display: block;
+
+        .reserve-form {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+
+        .reserve-form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background-color: #e6728f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+display: block;
             margin: 20px auto 0;
             padding: 10px 20px;
             background-color: #ff85a2;
@@ -173,8 +196,7 @@
                 Привет всем! Совсем скоро, 7 октября у меня состоится день рождения, поэтому спешу делиться некоторыми идеями подарков, которые сделают меня супер счастливой.
                 Я выбрала для себя несколько секций, которые касаются моих интересов и желания новых ощущений и опыта. Ваше присутствие - лучший подарок из всех возможных! ❤️
             </p>
-            <button id="resetAllBtn" class="reset-btn">Сбросить все отметки</button>
-        </header>
+</header>
 <div class="gift-list">
             <div class="gift-card">
                 <h2 class="gift-title">Гантели-утяжелители</h2>
@@ -253,20 +275,38 @@
         document.querySelectorAll('.reserve-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const giftId = this.getAttribute('data-gift');
-                const statusBtn = document.querySelector(`.status-btn[data-gift="${giftId}"]`);
+                const giftCard = this.closest('.gift-card');
+                let form = giftCard.querySelector('.reserve-form');
                 
-                if (statusBtn.classList.contains('available')) {
-                    statusBtn.textContent = 'Занято';
-                    statusBtn.classList.remove('available');
-                    statusBtn.classList.add('taken');
-                    localStorage.setItem(giftId, 'taken');
-                    this.style.display = 'none';
+                if (!form) {
+                    form = document.createElement('div');
+                    form.className = 'reserve-form';
+                    form.innerHTML = `
+                        <input type="email" placeholder="Впишите email" required>
+                        <button class="submit-btn">Подтвердить</button>
+                    `;
+                    giftCard.appendChild(form);
+                    
+                    form.querySelector('.submit-btn').addEventListener('click', function() {
+                        const email = form.querySelector('input').value;
+                        if (email) {
+                            const statusBtn = document.querySelector(`.status-btn[data-gift="${giftId}"]`);
+                            statusBtn.textContent = 'Занято';
+                            statusBtn.classList.remove('available');
+                            statusBtn.classList.add('taken');
+                            localStorage.setItem(giftId, 'taken');
+                            btn.style.display = 'none';
+                            form.style.display = 'none';
+                        }
+                    });
                 }
+                
+                form.style.display = form.style.display === 'block' ? 'none' : 'block';
             });
         });
 
         // Initialize status from localStorage
-        document.querySelectorAll('.status-btn').forEach(btn => {
+document.querySelectorAll('.status-btn').forEach(btn => {
             const giftId = btn.getAttribute('data-gift');
             if (localStorage.getItem(giftId) === 'taken') {
                 btn.textContent = 'Занято';
@@ -276,23 +316,6 @@
                 if (reserveBtn) reserveBtn.style.display = 'none';
             }
         });
-
-        // Reset all button functionality
-        document.getElementById('resetAllBtn').addEventListener('click', function() {
-            if (confirm('Вы уверены, что хотите сбросить все отметки о занятых подарках?')) {
-                document.querySelectorAll('.status-btn').forEach(btn => {
-                    const giftId = btn.getAttribute('data-gift');
-                    localStorage.removeItem(giftId);
-                    btn.textContent = 'Доступно';
-                    btn.classList.remove('taken');
-                    btn.classList.add('available');
-                });
-                
-                document.querySelectorAll('.reserve-btn').forEach(btn => {
-                    btn.style.display = 'inline-block';
-                });
-            }
-        });
-    </script>
+</script>
 </body>
 </html>
