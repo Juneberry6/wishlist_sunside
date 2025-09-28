@@ -1,12 +1,157 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Мой сайт</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Birthday Wishlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            background-color: #0a0a1a;
+            overflow-x: hidden;
+        }
+        
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('http://static.photos/nature/1200x630/42');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: brightness(0.3);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .intro {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .gift-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .gift-card {
+            background: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .gift-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gift-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ff85a2;
+        }
+        
+        .gift-description {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .gift-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #ff85a2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .gift-link:hover {
+            background: #ff6b8b;
+        }
+    </style>
 </head>
 <body>
-    <h1>Добро пожаловать!</h1>
-    <p>Это мой первый сайт.</p>
+    <div class="parallax-bg"></div>
+    
+    <div class="container">
+        <header>
+            <h1>My Birthday Wishlist</h1>
+            <p class="intro">
+                Hi everyone! As my birthday approaches, I wanted to share some gift ideas that would make me super happy. 
+                These are just suggestions - your presence is the best present of all! ❤️
+            </p>
+        </header>
+        
+        <div class="gift-list">
+            <div class="gift-card">
+                <h2 class="gift-title">Cosy Blanket</h2>
+                <p class="gift-description">
+                    A soft, warm blanket for those chilly evenings when I'm reading or watching movies.
+                </p>
+                <a href="https://example.com/blanket" class="gift-link" target="_blank">Example Link</a>
+            </div>
+            
+            <div class="gift-card">
+                <h2 class="gift-title">Book</h2>
+                <p class="gift-description">
+                    I love fantasy novels! Any book from my favorite authors would be amazing.
+                </p>
+                <a href="https://example.com/book" class="gift-link" target="_blank">Example Link</a>
+            </div>
+            
+            <div class="gift-card">
+                <h2 class="gift-title">Scented Candles</h2>
+                <p class="gift-description">
+                    I enjoy vanilla or lavender scented candles to create a relaxing atmosphere.
+                </p>
+                <a href="https://example.com/candles" class="gift-link" target="_blank">Example Link</a>
+            </div>
+            
+            <div class="gift-card">
+                <h2 class="gift-title">Gift Card</h2>
+                <p class="gift-description">
+                    A gift card to my favorite bookstore or coffee shop would be perfect!
+                </p>
+                <a href="https://example.com/giftcard" class="gift-link" target="_blank">Example Link</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const parallaxBg = document.querySelector('.parallax-bg');
+            let scrollPosition = window.pageYOffset;
+            parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        });
+    </script>
 </body>
 </html>
