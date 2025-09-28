@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Birthday Wishlist Да!</title>
+    <title>My Birthday Wishlist!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -98,21 +98,19 @@
             margin-bottom: 15px;
             line-height: 1.5;
         }
-        
         .gift-link {
             display: inline-block;
             padding: 8px 15px;
-            background: #ff85a2;
+            background: #ffb347;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s ease;
         }
         .gift-link:hover {
-            background: #ff6b8b;
+            background: #ff9a3f;
         }
-        
-        .gift-status {
+.gift-status {
             margin-top: 15px;
         }
         .status-btn {
@@ -170,19 +168,54 @@
             border-radius: 4px;
             cursor: pointer;
         }
-display: block;
-            margin: 20px auto 0;
-            padding: 10px 20px;
-            background-color: #ff85a2;
+        .reserve-form {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+
+        .reserve-form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background-color: #e6728f;
             color: white;
             border: none;
-            border-radius: 5px;
+            padding: 5px 10px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
         
-        .reset-btn:hover {
-            background-color: #ff6b8b;
+        .reserve-form {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+
+        .reserve-form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background-color: #e6728f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
         }
 </style>
 </head>
@@ -191,8 +224,8 @@ display: block;
             <div class="light-effect" style="background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);"></div>
 <div class="container">
         <header>
-            <h1>My Birthday Wishlist</h1>
-            <p class="intro">
+                <h1>My Birthday Wishlist!</h1>
+<p class="intro">
                 Привет всем! Совсем скоро, 7 октября у меня состоится день рождения, поэтому спешу делиться некоторыми идеями подарков, которые сделают меня супер счастливой.
                 Я выбрала для себя несколько секций, которые касаются моих интересов и желания новых ощущений и опыта. Ваше присутствие - лучший подарок из всех возможных! ❤️
             </p>
@@ -214,7 +247,7 @@ display: block;
                 <p class="gift-description">
                     A relaxing spa treatment or massage to help me unwind and pamper myself.
                 </p>
-                <a href="https://www.spafinder.com/" class="gift-link" target="_blank">Ссылка для примера</a>
+                <a href="https://www.ozon.ru/product/printsipy-zhizn-i-rabota-dalio-rey-249171519/?at=36tWqY8X6hzo5RA2ix50KKgSQ3WRNpf08Gxz3ilmDglk" class="gift-link" target="_blank">Ссылка для примера</a>
                 <div class="gift-status">
                 <button class="status-btn available" data-gift="spa-day">Доступно</button>
                 <button class="reserve-btn" data-gift="spa-day">Занять</button>
@@ -243,31 +276,45 @@ display: block;
 </div>
 </div>
             <div class="gift-card">
-                <h2 class="gift-title">Dining Experience</h2>
+                <h2 class="gift-title">Беспроводная мышка</h2>
                 <p class="gift-description">
-                    A gift certificate to a nice restaurant for a memorable dining experience.
+                    Беспроводная мышка для ноутбука, которая будет подходить и к макбуку. Хотелось бы, чтобы она работала хотя бы весь рабочий день.
                 </p>
-                <a href="https://www.opentable.com/" class="gift-link" target="_blank">Example Link</a>
+                <a href="" class="gift-link" target="_blank">Ссылка для примера</a>
                 <div class="gift-status">
                 <button class="status-btn available" data-gift="dining">Доступно</button>
                 <button class="reserve-btn" data-gift="dining">Занять</button>
 </div>
 </div>
             <div class="gift-card">
-                <h2 class="gift-title">Skincare Set</h2>
+                <h2 class="gift-title">Сертификат Ozon</h2>
                 <p class="gift-description">
-                    Luxury skincare products to help me maintain a healthy, glowing complexion.
+                    Универсальный подарок на все случаи жизни.
                 </p>
-                <a href="https://www.sephora.com/shop/skincare" class="gift-link" target="_blank">Example Link</a>
+                <a href="https://www.ozon.ru/landing/giftcertificates/?perehod=headerdesk" class="gift-link" target="_blank">Ссылка для примера</a>
+                <div class="gift-status">
+                <button class="status-btn available" data-gift="skincare">Доступно</button>
+                <button class="reserve-btn" data-gift="skincare">Занять</button>
+</div>
+</div>
+            <div class="gift-card">
+                <h2 class="gift-title">Сертификат Читай-город</h2>
+                <p class="gift-description">
+                    Люблю книги, читать и город.
+                </p>
+                <a href="https://www.chitai-gorod.ru/certificate?ysclid=mg3z0ldl8q384882215" class="gift-link" target="_blank">Ссылка для примера</a>
                 <div class="gift-status">
                 <button class="status-btn available" data-gift="skincare">Доступно</button>
                 <button class="reserve-btn" data-gift="skincare">Занять</button>
 </div>
 </div>
         </div>
-</div>
+        <footer style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(0,0,0,0.5); border-radius: 10px;">
+            <p>По любым вопросам пишите мне в тг 😊</p>
+        </footer>
+    </div>
     <script>
-        window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function() {
             const parallaxBg = document.querySelector('.parallax-bg');
             let scrollPosition = window.pageYOffset;
             parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
@@ -281,16 +328,16 @@ display: block;
                 if (!form) {
                     form = document.createElement('div');
                     form.className = 'reserve-form';
-                    form.innerHTML = `
-                        <input type="email" placeholder="Впишите email" required>
+                        form.innerHTML = `
+                        <input type="email" placeholder="Введите свой email" required>
                         <button class="submit-btn">Подтвердить</button>
                     `;
-                    giftCard.appendChild(form);
+giftCard.appendChild(form);
                     
                     form.querySelector('.submit-btn').addEventListener('click', function() {
                         const email = form.querySelector('input').value;
-                        if (email) {
-                            const statusBtn = document.querySelector(`.status-btn[data-gift="${giftId}"]`);
+                        if (email && email.includes('@')) {
+const statusBtn = document.querySelector(`.status-btn[data-gift="${giftId}"]`);
                             statusBtn.textContent = 'Занято';
                             statusBtn.classList.remove('available');
                             statusBtn.classList.add('taken');
@@ -304,16 +351,24 @@ display: block;
                 form.style.display = form.style.display === 'block' ? 'none' : 'block';
             });
         });
-
-        // Initialize status from localStorage
-document.querySelectorAll('.status-btn').forEach(btn => {
+        // Initialize all gifts as available
+        document.querySelectorAll('.status-btn').forEach(btn => {
             const giftId = btn.getAttribute('data-gift');
-            if (localStorage.getItem(giftId) === 'taken') {
-                btn.textContent = 'Занято';
-                btn.classList.remove('available');
-                btn.classList.add('taken');
-                const reserveBtn = document.querySelector(`.reserve-btn[data-gift="${giftId}"]`);
-                if (reserveBtn) reserveBtn.style.display = 'none';
+            btn.textContent = 'Доступно';
+            btn.classList.remove('taken');
+            btn.classList.add('available');
+            const reserveBtn = document.querySelector(`.reserve-btn[data-gift="${giftId}"]`);
+            if (reserveBtn) reserveBtn.style.display = 'inline-block';
+        });
+        // Validate email input
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('submit-btn')) {
+                const input = e.target.closest('.reserve-form').querySelector('input');
+                if (!input.value.includes('@')) {
+                    input.style.border = '1px solid red';
+                } else {
+                    input.style.border = 'none';
+                }
             }
         });
 </script>
